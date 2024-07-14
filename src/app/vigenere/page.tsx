@@ -15,7 +15,7 @@ export default function Page() {
             <NavBar />
                 <div className="flex flex-row items-stretch">
                     <div className='basis-1/2 self-start flex flex-col items-center justify-center'>
-                        <h1 className='text-5xl'>Encription</h1>
+                        <h1 className='text-5xl'>Encryption</h1>
                         <input
                             type="text"
                             name="Plaintext"
@@ -35,7 +35,7 @@ export default function Page() {
                         <p>{vigenereEncript(inputValueKey, inputValuePlaintext)}</p>
                     </div>
                     <div className='basis-1/2 self-start flex flex-col items-center justify-center'>
-                        <h1 className='text-5xl'>Decription</h1>
+                        <h1 className='text-5xl'>Decryption</h1>
                         <input
                             type="text"
                             name="Ciphertext"

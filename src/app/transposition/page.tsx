@@ -43,7 +43,7 @@ export default function Page() {
                             value={inputValueCiphertext}
                             placeholder='Ciphertext'
                             onChange={(event) => setInputValueCiphertext(event.target.value)}
-                            className="block w-1/2 rounded-md border-1 p-1"
+                            className="block w-1/2 rounded-md border-1"
                         />
                         <input
                             type="number"
