@@ -7,7 +7,7 @@ export default function Page() {
     const [inputValuePlaintext, setInputValuePlaintext] = useState<string>('');
     const [inputValueKey, setInputValueKey] = useState<string>('');
     const [inputValueCiphertext, setInputValueCiphertext] = useState<string>('');
-    const [inputValueDecriptKey, setInputValueDecriptKey] = useState<string>('');
+    const [inputValueDecryptKey, setInputValueDecryptKey] = useState<string>('');
 
 
     return (
@@ -15,7 +15,7 @@ export default function Page() {
             <NavBar />
                 <div className="flex flex-row items-stretch">
                     <div className='basis-1/2 self-start flex flex-col items-center justify-center'>
-                        <h1 className='text-5xl'>Encription</h1>
+                        <h1 className='text-5xl'>Encryption</h1>
                         <input
                             type="text"
                             name="Plaintext"
@@ -32,10 +32,10 @@ export default function Page() {
                             onChange={(event) => setInputValueKey(event.target.value)}
                             className='block w-1/2 rounded-md border-1 '
                         />
-                        <p>{matrixEncript(inputValueKey, inputValuePlaintext)}</p>
+                        <p>{matrixEncrypt(inputValueKey, inputValuePlaintext)}</p>
                     </div>
                     <div className='basis-1/2 self-start flex flex-col items-center justify-center'>
-                        <h1 className='text-5xl'>Decription</h1>
+                        <h1 className='text-5xl'>Decryption</h1>
                         <input
                             type="text"
                             name="Ciphertext"
@@ -47,12 +47,12 @@ export default function Page() {
                         <input
                             type="string"
                             name="key"
-                            value={inputValueDecriptKey}
+                            value={inputValueDecryptKey}
                             placeholder='Key'
-                            onChange={(event) => setInputValueDecriptKey(event.target.value)}
+                            onChange={(event) => setInputValueDecryptKey(event.target.value)}
                             className='block w-1/2 rounded-md border-1 '
                             />
-                    <p>{matrixDecript(inputValueDecriptKey, inputValueCiphertext)}</p>
+                    <p>{matrixDecrypt(inputValueDecryptKey, inputValueCiphertext)}</p>
                 </div>
             </div>
         </main>
@@ -61,7 +61,7 @@ export default function Page() {
 
 const alphabet: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-function matrixEncript(key: string, text: string): string {
+function matrixEncrypt(key: string, text: string): string {
     text = text.toUpperCase()
     key = key.toUpperCase()
     let result: string = ""
@@ -83,7 +83,7 @@ function matrixEncript(key: string, text: string): string {
       return result;
 
 }
-function matrixDecript(key: string, text: string): string {
+function matrixDecrypt(key: string, text: string): string {
     text = text.toUpperCase()
     key = key.toUpperCase()
     let result: string = ""
